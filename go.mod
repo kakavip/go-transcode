@@ -1,6 +1,6 @@
-module github.com/m1k1o/go-transcode
+module vimai/ads-transcode
 
-go 1.17
+go 1.21.13
 
 require (
 	github.com/fsnotify/fsnotify v1.5.1

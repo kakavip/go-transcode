@@ -8,7 +8,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/m1k1o/go-transcode/internal/utils"
+	"vimai/ads-transcode/internal/utils"
 
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"

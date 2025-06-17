@@ -1,10 +1,10 @@
-ARG GO_TRANSCODE_IMAGE=go-transcode:latest
+ARG ADS_TRANSCODE_IMAGE=ads-transcode:latest
 ARG BASE_IMAGE=linuxserver/ffmpeg
 
 #
 # STAGE 1: build executable binary
 #
-FROM $GO_TRANSCODE_IMAGE as build
+FROM $ADS_TRANSCODE_IMAGE as build
 
 #
 # STAGE 2: build a small image
@@ -19,7 +19,7 @@ ARG USER_GID=$USER_UID
 RUN groupadd --gid $USER_GID $USERNAME; \
     useradd --uid $USER_UID --gid $USERNAME --shell /bin/bash --create-home $USERNAME;
 
-COPY --from=build /app/go-transcode go-transcode
+COPY --from=build /app/ads-transcode ads-transcode
 COPY profiles profiles
 
 ENV USER=$USERNAME
@@ -28,5 +28,5 @@ ENV NVIDIA_DRIVER_CAPABILITIES=all
 EXPOSE 8080
 ENV TRANSCODE_BIND=:8080
 
-ENTRYPOINT [ "./go-transcode" ]
+ENTRYPOINT [ "./ads-transcode" ]
 CMD [ "serve" ]

@@ -13,7 +13,7 @@ import (
 	"github.com/go-chi/chi/v5"
 	"github.com/rs/zerolog/log"
 
-	"github.com/m1k1o/go-transcode/hlsvod"
+	"vimai/ads-transcode/hlsvod"
 )
 
 var hlsVodManagers map[string]hlsvod.Manager = make(map[string]hlsvod.Manager)

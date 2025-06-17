@@ -1,14 +1,16 @@
 version: "3"
 
 services:
-  go-transcode:
+  ads-transcode:
     build: .
-    container_name: go-transcode
+    container_name: ads-transcode
     restart: unless-stopped
+    tmpfs:
+      - "/tmp/transcoded:mode=777,size=512M,uid=1000,gid=1000"
     ports:
       - "8080:8080"
     volumes:
       - ./config.yaml:/app/config.yaml
       # Mount your VOD here, for hlsvod module
-      # - ./media:/app/media
+      - ./media:/tmp/media
     command: serve -d

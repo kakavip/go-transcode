@@ -14,7 +14,7 @@ import (
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
 
-	"github.com/m1k1o/go-transcode/internal/utils"
+	"vimai/ads-transcode/internal/utils"
 )
 
 // how often should be cleanup called

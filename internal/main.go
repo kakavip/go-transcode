@@ -8,9 +8,9 @@ import (
 	"github.com/rs/zerolog/log"
 	"github.com/spf13/cobra"
 
-	"github.com/m1k1o/go-transcode/internal/api"
-	"github.com/m1k1o/go-transcode/internal/config"
-	"github.com/m1k1o/go-transcode/internal/http"
+	"vimai/ads-transcode/internal/api"
+	"vimai/ads-transcode/internal/config"
+	"vimai/ads-transcode/internal/http"
 )
 
 var Service *Main

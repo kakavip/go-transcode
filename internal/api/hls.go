@@ -9,7 +9,7 @@ import (
 	"github.com/go-chi/chi/v5"
 	"github.com/rs/zerolog/log"
 
-	"github.com/m1k1o/go-transcode/hls"
+	"vimai/ads-transcode/hls"
 )
 
 var hlsManagers map[string]hls.Manager = make(map[string]hls.Manager)

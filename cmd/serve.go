@@ -1,10 +1,9 @@
 package cmd
 
 import (
+	transcode "vimai/ads-transcode/internal"
 	"github.com/rs/zerolog/log"
 	"github.com/spf13/cobra"
-
-	"github.com/m1k1o/go-transcode/internal"
 )
 
 func init() {

@@ -1,14 +1,14 @@
 #
 # STAGE 1: build executable binary
 #
-FROM golang:1.17-alpine as builder
+FROM golang:1.21.13-alpine as builder
 WORKDIR /app
 
 #
 # build server
 COPY . .
 RUN go get -v -t -d .; \
-    CGO_ENABLED=0 go build -o go-transcode
+    CGO_ENABLED=0 go build -o ads-transcode
 
 #
 # STAGE 2: build a small image
@@ -30,11 +30,14 @@ RUN if [ "$VDPAU" = "1" ]; then \
         apk add --no-cache bash ffmpeg libva-utils libva-vdpau-driver libva-intel-driver intel-media-driver mesa-va-gallium; \
     fi
 
-COPY --from=builder /app/go-transcode go-transcode
+COPY --from=builder /app/ads-transcode ads-transcode
+
 COPY profiles profiles
+RUN mkdir -p /etc/transcode
+COPY config.yaml /etc/transcode/config.yaml
 
 EXPOSE 8080
 ENV TRANSCODE_BIND=:8080
 
-ENTRYPOINT [ "./go-transcode" ]
+ENTRYPOINT [ "./ads-transcode" ]
 CMD [ "serve" ]

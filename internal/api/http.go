@@ -8,7 +8,7 @@ import (
 	"github.com/go-chi/chi/v5"
 	"github.com/rs/zerolog/log"
 
-	"github.com/m1k1o/go-transcode/internal/utils"
+	"vimai/ads-transcode/internal/utils"
 )
 
 func (a *ApiManagerCtx) Http(r chi.Router) {

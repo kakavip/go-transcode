@@ -11,7 +11,7 @@ import (
 	"github.com/go-chi/chi/v5"
 	"github.com/rs/zerolog/log"
 
-	"github.com/m1k1o/go-transcode/internal/config"
+	"vimai/ads-transcode/internal/config"
 )
 
 var resourceRegex = regexp.MustCompile(`^[0-9A-Za-z_-]+$`)

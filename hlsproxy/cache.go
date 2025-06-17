@@ -4,7 +4,7 @@ import (
 	"io"
 	"time"
 
-	"github.com/m1k1o/go-transcode/internal/utils"
+	"vimai/ads-transcode/internal/utils"
 )
 
 func (m *ManagerCtx) getFromCache(key string) (*utils.Cache, bool) {

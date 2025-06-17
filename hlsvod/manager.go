@@ -58,10 +58,10 @@ func New(config Config) *ManagerCtx {
 		logger: log.With().Str("module", "hlsvod").Str("submodule", "manager").Logger(),
 		config: config,
 
-		segmentLength:    4,
+		segmentLength:    6,
 		segmentOffset:    1,
 		segmentBufferMin: 3,
-		segmentBufferMax: 5,
+		segmentBufferMax: 10,
 
 		ctx:    ctx,
 		cancel: cancel,

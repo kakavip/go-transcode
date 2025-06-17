@@ -12,7 +12,7 @@ import (
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
 
-	"github.com/m1k1o/go-transcode/internal/config"
+	"vimai/ads-transcode/internal/config"
 )
 
 type HttpManagerCtx struct {

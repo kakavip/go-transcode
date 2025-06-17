@@ -11,7 +11,7 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 
-	transcode "github.com/m1k1o/go-transcode/internal"
+	transcode "vimai/ads-transcode/internal"
 )
 
 func Execute() error {
